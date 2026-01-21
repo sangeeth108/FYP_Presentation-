@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Enter Prompt</title>
+  <style>
+    body {
+      background: #111;
+      color: white;
+      font-family: Arial;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+    .box {
+      background: #222;
+      padding: 20px;
+      width: 300px;
+      text-align: center;
+    }
+    input {
+      width: 100%;
+      padding: 8px;
+      margin-top: 10px;
+    }
+    button {
+      margin-top: 15px;
+      width: 100%;
+      padding: 8px;
+    }
+  </style>
+</head>
+<body>
+
+<div class="box">
+  <h2>Enter Prompt</h2>
+  <input id="promptInput" placeholder="house,tower,bridge,city..." />
+  <button onclick="go()">Generate</button>
+</div>
+
+<script>
+function go() {
+  const prompt = document.getElementById("promptInput").value.trim();
+  if (!prompt) return alert("Enter a prompt");
+
+  sessionStorage.setItem("prompt", prompt);
+  window.location.href = "sim.html";
+}
+</script>
+
+</body>
+</html>
